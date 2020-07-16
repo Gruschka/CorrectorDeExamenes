@@ -11,3 +11,16 @@ Hice una clase 'Curso' que tenga una lista de Alumnos y Examenes. Esta clase pue
 pero se me ocurrio que explicaba un poco mas la solucion que pense). Esta clase tiene un metodo tomarExamen(Examen) que lo que hace es, por cada alumno
 'anotado' al curso, crea una instancia en base a un examen original y hace que alumno.resolverExamen(nuevaInstancia). Asi cada alumno puede modificar su 
 instancia de examen (algo asi como un profesor haciendo fotocopias de un examen y entregandoselas a cada alumno).
+
+Respecto a los posibles cambios:
+1)un estudiante puede aprobar un examen sólo si tiene determinadas preguntas correctamente contestadas
+Esto lo haria con un atributo 'esExcluyente' booleano dentro de las preguntas. Luego, en el metodo obtenerResultado() del examen, en la primer pregunta que
+esExcluyente y esta desaprobada, hago que directamente devuelva un patito (2) o lo que sea que se requiera.
+
+2)para obtener la sumatoria existen tres opciones: 
+- las preguntas mal contestadas no suman, 
+- restan la mitad de su valor, o bien 
+- descuenta 1 punto del total.
+
+Para esto trataria de encararlo como el CriterioCalculoNota. Harai que las preguntas tengan un atributo criterio al cual puedan delegarle este calculo. Esto seria
+una interfaz, y despues haria una clase para criterio a implementar. Entonces en el metodo corregir() directamente le delegan a su criterio el calculo final.
