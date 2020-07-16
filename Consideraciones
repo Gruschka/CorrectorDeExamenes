@@ -1,0 +1,13 @@
+No me termino de quedar en claro a que se refiere con los 'casos de prueba'. 
+Tenemos que hacer tests con mocks? Habia entendido en las clases que esto no era necesario.
+
+Respecto a lo que es el calculo de la nota, decidi optar por composicion, haciendo que un Examen pueda delegarle a su atributo criterioCorreccion el calculo.
+
+Por otra parte, para lo que son las preguntas, opte por una clase abstracta
+(ya que entiendo que las preguntas tienen 'estado' en lo que seria el 'cuerpo' de la pregunta, que tiene que poder 'mostrarse', al igual que su peso). 
+Y cada sublase de dicha clase implementa su forma de responderse y corregirse.
+
+Hice una clase 'Curso' que tenga una lista de Alumnos y Examenes. Esta clase puede crear examenes y agregarle preguntas (no es un requisito especifico del ej.
+pero se me ocurrio que explicaba un poco mas la solucion que pense). Esta clase tiene un metodo tomarExamen(Examen) que lo que hace es, por cada alumno
+'anotado' al curso, crea una instancia en base a un examen original y hace que alumno.resolverExamen(nuevaInstancia). Asi cada alumno puede modificar su 
+instancia de examen (algo asi como un profesor haciendo fotocopias de un examen y entregandoselas a cada alumno).
